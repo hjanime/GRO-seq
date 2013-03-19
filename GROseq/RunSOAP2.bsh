@@ -1,0 +1,123 @@
+#!/bin/bash
+
+function AlignToGenome {
+	gunzip $RAWDIR/$INf.gz								## Would be nice if SOAP2 actually made .gz a valid input format!
+	$SOAP -a $RAWDIR/$INf -D $HG18 -o $OUTDIR/$PRE.soap2 -l 32 -r 0 -v 3 -p 2 -n 10	## Run SOAP2.
+	cat $OUTDIR/$PRE.soap2 | perl $PARSE > $OUTDIR/$PRE.bed				## Parse to a bed format.
+
+	# cleanup
+	rm $OUTDIR/$PRE.soap2
+	gzip $OUTDIR/$PRE.bed
+	gzip $RAWDIR/$INf
+}
+
+OUTDIR="SOAP"			### Raw and output directories
+SOAP="soap2.20release/soap"	### SOAP software
+PARSE="SOAP/ParseSOAP.pl"
+HG18="hg18/hg18.fa.index"	### Reference genome, repeat, and linker sequence files
+
+########################################################################################################
+## Align reads from 3-16 ###############################################################################
+########################################################################################################
+RAWDIR="RawSequenceFiles/3-16"
+
+INf="s_6_sequence.txt"
+PRE="s_6.3-16"
+AlignToGenome
+
+INf="s_7_sequence.txt"
+PRE="s_7.3-16"
+AlignToGenome
+
+########################################################################################################
+## Align reads from 4-10 ###############################################################################
+########################################################################################################
+RAWDIR="RawSequenceFiles/4-10"
+
+INf="s_2_sequence.txt"
+PRE="s_2.4-10"
+AlignToGenome
+
+INf="s_3_sequence.txt"
+PRE="s_3.4-10"
+AlignToGenome
+
+INf="s_5_sequence.txt"
+PRE="s_5.4-10"
+AlignToGenome
+
+INf="s_6_sequence.txt"
+PRE="s_6.4-10"
+AlignToGenome
+
+INf="s_7_sequence.txt"
+PRE="s_7.4-10"
+AlignToGenome
+
+INf="s_8_sequence.txt"
+PRE="s_8.4-10"
+AlignToGenome
+
+########################################################################################################
+### Align reads from 5-4 ###############################################################################
+########################################################################################################
+RAWDIR="RawSequenceFiles/5-4"
+
+INf="s_2_sequence.txt"
+PRE="s_2.5-4"
+AlignToGenome
+
+INf="s_3_sequence.txt"
+PRE="s_3.5-4"
+AlignToGenome
+
+INf="s_5_sequence.txt"
+PRE="s_5.5-4"
+AlignToGenome
+
+INf="s_6_sequence.txt"
+PRE="s_6.5-4"
+AlignToGenome
+
+INf="s_7_sequence.txt"
+PRE="s_7.5-4"
+AlignToGenome
+
+INf="s_8_sequence.txt"
+PRE="s_8.5-4"
+AlignToGenome
+
+########################################################################################################
+### Align reads from 6-23 ##############################################################################
+########################################################################################################
+RAWDIR="RawSequenceFiles/6-23"
+
+INf="10192794_428KRAAXX_s_7_sequence.txt"
+PRE="s_7.6-23"
+AlignToGenome
+
+INf="10192794_428KRAAXX_s_8_sequence.txt"
+PRE="s_8.6-23"
+AlignToGenome
+
+INf="10192794_42AY1AAXX_s_2_sequence.txt"
+PRE="s_2.6-23"
+AlignToGenome
+
+INf="10192794_42AY1AAXX_s_3_sequence.txt"
+PRE="s_3.6-23"
+AlignToGenome
+
+INf="10192794_42AY1AAXX_s_4_sequence.txt"
+PRE="s_4.6-23"
+AlignToGenome
+
+INf="10192794_42AY1AAXX_s_5_sequence.txt"
+PRE="s_5.6-23"
+AlignToGenome
+
+#########################################################
+
+## Concatenate the different timepoints
+cd SOAP
+bash Combine.bsh

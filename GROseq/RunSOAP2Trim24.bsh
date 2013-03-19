@@ -1,0 +1,39 @@
+#!/bin/bash
+
+function AlignToGenome {
+	gunzip $RAWDIR/$INf.gz								## Would be nice if SOAP2 actually made .gz a valid input format!
+	$SOAP -a $RAWDIR/$INf -D $HG18 -o $OUTDIR/$PRE.soap2 -l 32 -r 0 -v 3 -p 2 -n 10	## Run SOAP2.
+	cat $OUTDIR/$PRE.soap2 | perl $PARSE > $OUTDIR/$PRE.bed				## Parse to a bed format.
+
+	# cleanup
+	rm $OUTDIR/$PRE.soap2
+	gzip $OUTDIR/$PRE.bed
+	gzip $RAWDIR/$INf
+}
+
+OUTDIR="RawSequenceFiles/trim24TEMP"			### Raw and output directories
+SOAP="soap2.20release/soap"	### SOAP software
+PARSE="SOAP/ParseSOAP.pl"
+HG18="hg18/hg18.fa.index"	### Reference genome, repeat, and linker sequence files
+
+########################################################################################################
+## Align reads from 3-16 ###############################################################################
+########################################################################################################
+RAWDIR="RawSequenceFiles/trim24TEMP"
+
+INf="SRR065821.fastq"
+PRE="SRR065821"
+AlignToGenome
+
+INf="SRR065822.fastq"
+PRE="SRR065822"
+AlignToGenome
+
+INf="SRR065823.fastq"
+PRE="SRR065823"
+AlignToGenome
+
+INf="SRR065824.fastq"
+PRE="SRR065824"
+AlignToGenome
+

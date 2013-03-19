@@ -1,0 +1,22 @@
+## Run R Scripts.
+R --no-save < BreakTranscriptsOnGenes.R
+R --no-save < CombineTranscripts.R
+
+## Write out strand-specific files.
+grep "+" BrokenTranscripts.bed > BrokenTranscriptsPlus.bed
+grep "-" BrokenTranscripts.bed > BrokenTranscriptsMinus.bed
+grep "+" CombinedTranscripts.bed > CombinedTranscriptsPlus.bed
+grep "-" CombinedTranscripts.bed > CombinedTranscriptsMinus.bed
+
+## Run featurebits.
+featureBits hg18 ./BrokenTranscriptsPlus.bed ./CombinedTranscriptsPlus.bed -or -bed=FinalTranscriptsPlus.bed 
+featureBits hg18 ./BrokenTranscriptsMinus.bed ./CombinedTranscriptsMinus.bed -or -bed=FinalTranscriptsMinus.bed
+
+## Combine.
+R --no-save < AddStrandNameInformation.R 
+
+## Write out stats.
+grep "" -c ../Hmm-ADC.B-200.V5.bed
+grep "" -c BrokenTranscripts.bed
+grep "" -c CombinedTranscripts.bed
+grep "" -c FinalTranscripts.bed

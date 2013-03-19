@@ -1,0 +1,17 @@
+# Nasun
+zcat s_2.5-4.bed.gz s_3.5-4.bed.gz s_2.4-10.bed.gz s_3.4-10.bed.gz > NH.00Min.bed
+zcat s_6.5-4.bed.gz s_7.5-4.bed.gz s_6.4-10.bed.gz s_7.4-10.bed.gz > NH.40Min.bed
+zcat s_2.6-23.bed.gz s_7.6-23.bed.gz > NH.10Min.bed
+zcat s_3.6-23.bed.gz s_8.6-23.bed.gz > NH.160Min.bed
+
+# Leighton
+zcat s_8.5-4.bed.gz s_8.4-10.bed.gz s_6.3-16.bed.gz > LC.00Min.bed
+zcat s_5.5-4.bed.gz s_5.4-10.bed.gz s_7.3-16.bed.gz > LC.40Min.bed
+zcat s_4.6-23.bed.gz > LC.10Min.bed
+zcat s_5.6-23.bed.gz > LC.160Min.bed
+
+# Cleanup and generate R data files
+mv *.bed.gz ./rawAlignments/
+mv *.bed ./bedFiles/
+cd bedFiles
+R --no-save < makeRDataFilesFromBed.R

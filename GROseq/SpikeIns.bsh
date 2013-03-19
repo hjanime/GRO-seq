@@ -1,0 +1,137 @@
+## RCP1
+echo "RCP:-------------------------------------"
+echo "LC 00Min"
+grep "RCP1" -c LC.00Min.bed
+echo "NH 00Min"
+grep "RCP1" -c NH.00Min.bed
+echo "LC 10Min"
+grep "RCP1" -c LC.10Min.bed
+echo "NH 10Min"
+grep "RCP1" -c NH.10Min.bed
+echo "LC 40Min"
+grep "RCP1" -c LC.40Min.bed
+echo "NH 40Min"
+grep "RCP1" -c NH.40Min.bed
+echo "LC 160Min"
+grep "RCP1" -c LC.160Min.bed
+echo "NH 160Min"
+grep "RCP1" -c NH.160Min.bed
+
+## LTP6
+echo "LTP6:-------------------------------------"
+echo "LC 00Min"
+grep "LTP6" -c LC.00Min.bed
+echo "NH 00Min"
+grep "LTP6" -c NH.00Min.bed
+echo "LC 10Min"
+grep "LTP6" -c LC.10Min.bed
+echo "NH 10Min"
+grep "LTP6" -c NH.10Min.bed
+echo "LC 40Min"
+grep "LTP6" -c LC.40Min.bed
+echo "NH 40Min"
+grep "LTP6" -c NH.40Min.bed
+echo "LC 160Min"
+grep "LTP6" -c LC.160Min.bed
+echo "NH 160Min"
+grep "LTP6" -c NH.160Min.bed
+
+## PRKase
+echo "PRKase:-------------------------------------"
+echo "LC 00Min"
+grep "PRKase" -c LC.00Min.bed
+echo "NH 00Min"
+grep "PRKase" -c NH.00Min.bed
+echo "LC 10Min"
+grep "PRKase" -c LC.10Min.bed
+echo "NH 10Min"
+grep "PRKase" -c NH.10Min.bed
+echo "LC 40Min"
+grep "PRKase" -c LC.40Min.bed
+echo "NH 40Min"
+grep "PRKase" -c NH.40Min.bed
+echo "LC 160Min"
+grep "PRKase" -c LC.160Min.bed
+echo "NH 160Min"
+grep "PRKase" -c NH.160Min.bed
+
+## TIM
+echo "TIM:-------------------------------------"
+echo "LC 00Min"
+grep "TIM" -c LC.00Min.bed
+echo "NH 00Min"
+grep "TIM" -c NH.00Min.bed
+echo "LC 10Min"
+grep "TIM" -c LC.10Min.bed
+echo "NH 10Min"
+grep "TIM" -c NH.10Min.bed
+echo "LC 40Min"
+grep "TIM" -c LC.40Min.bed
+echo "NH 40Min"
+grep "TIM" -c NH.40Min.bed
+echo "LC 160Min"
+grep "TIM" -c LC.160Min.bed
+echo "NH 160Min"
+grep "TIM" -c NH.160Min.bed
+
+## CAB
+echo "CAB:-------------------------------------"
+echo "LC 00Min"
+grep "CAB" -c LC.00Min.bed
+echo "NH 00Min"
+grep "CAB" -c NH.00Min.bed
+echo "LC 10Min"
+grep "CAB" -c LC.10Min.bed
+echo "NH 10Min"
+grep "CAB" -c NH.10Min.bed
+echo "LC 40Min"
+grep "CAB" -c LC.40Min.bed
+echo "NH 40Min"
+grep "CAB" -c NH.40Min.bed
+echo "LC 160Min"
+grep "CAB" -c LC.160Min.bed
+echo "NH 160Min"
+grep "CAB" -c NH.160Min.bed
+
+
+## RBCL
+echo "RBCL(utp spike):-------------------------------------"
+echo "LC 00Min"
+grep "RBCL" -c LC.00Min.bed
+echo "NH 00Min"
+grep "RBCL" -c NH.00Min.bed
+echo "LC 10Min"
+grep "RBCL" -c LC.10Min.bed
+echo "NH 10Min"
+grep "RBCL" -c NH.10Min.bed
+echo "LC 40Min"
+grep "RBCL" -c LC.40Min.bed
+echo "NH 40Min"
+grep "RBCL" -c NH.40Min.bed
+echo "LC 160Min"
+grep "RBCL" -c LC.160Min.bed
+echo "NH 160Min"
+grep "RBCL" -c NH.160Min.bed
+
+##RCA
+echo "RCA(utp spike):-------------------------------------"
+echo "LC 00Min"
+grep "RCA" -c LC.00Min.bed
+echo "NH 00Min"
+grep "RCA" -c NH.00Min.bed
+echo "LC 10Min"
+grep "RCA" -c LC.10Min.bed
+echo "NH 10Min"
+grep "RCA" -c NH.10Min.bed
+echo "LC 40Min"
+grep "RCA" -c LC.40Min.bed
+echo "NH 40Min"
+grep "RCA" -c NH.40Min.bed
+echo "LC 160Min"
+grep "RCA" -c LC.160Min.bed
+echo "NH 160Min"
+grep "RCA" -c NH.160Min.bed
+
+
+
+
