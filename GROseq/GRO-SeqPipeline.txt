@@ -1,0 +1,22 @@
+GRO-Seq Pipeline
+Align to the reference
+-	RunSOAP2.bsh
+-	ParseSOAP.pl
+Create RData Files from bed
+-	makeRDataFilesFRomBed.R
+Write wiggle files for visualization
+-	WriteWiggle () in GROseq-v1.0.3
+Transcript Calling by HMM
+-	PredictTranscripts_ConstrainedGamma.R
+Make Final transcripts
+-	RunMakeFinalTranscripts.bsh
+# It has 2 functions integrated – Break Transcripts on genes and Combine Transcripts
+Annotate the final transcripts
+-	AnnotationPipeline.bsh
+# requires perlcol.pl. Gives the number of all transcripts/all genes annotated RNA genes/ Antisense transcription /Divergent transcription/ Enhancer Transcription
+Call regulation (transcripts or genes) using edgeR
+-	RunCallChangedGenes_edgeR.R
+-	RunCallChangedTranscripts.edgeR.R
+-	T.RunTimecourse_edgeR.R
+Downstream Analysis i.e., Metagenes
+-	MetaGeneAnalysis-Clusters.R
